@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MNu-aW-Z3C">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ChatList-->
+        <scene sceneID="r9b-LG-gc7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChatList" id="bUO-kD-r6y" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="srO-Pd-k2d"/>
+                    <navigationItem key="navigationItem" id="dDG-dI-CRr"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dsN-10-FmI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="266" y="212"/>
+        </scene>
+        <!--친구-->
+        <scene sceneID="KwL-at-O6m">
+            <objects>
+                <navigationController id="6RY-kU-2uI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="친구" id="bGm-wX-I23"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZEp-qv-krA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Xfe-Cg-VN5" kind="relationship" relationship="rootViewController" id="ziR-0F-P7Y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="37E-2I-j8L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-320" y="-589"/>
+        </scene>
+        <!--FriendsList-->
+        <scene sceneID="JmX-F6-SjH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FriendsList" id="Xfe-Cg-VN5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="xZ9-bW-5tW"/>
+                    <navigationItem key="navigationItem" id="uOl-6X-OXH"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sVf-RY-R5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="278" y="-589"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="fhN-8H-gTq">
+            <objects>
+                <tabBarController id="MNu-aW-Z3C" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="umF-YX-D6I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="6RY-kU-2uI" kind="relationship" relationship="viewControllers" id="flu-4y-oeO"/>
+                        <segue destination="T8M-Aw-rNQ" kind="relationship" relationship="viewControllers" id="CZF-rr-xMN"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j0W-ON-bHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1561" y="-82"/>
+        </scene>
+        <!--대화-->
+        <scene sceneID="ywd-FZ-49j">
+            <objects>
+                <navigationController id="T8M-Aw-rNQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="대화" id="4l8-n3-yoT"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TPA-nT-JBm">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bUO-kD-r6y" kind="relationship" relationship="rootViewController" id="tg6-eR-J3G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W4t-Li-0tZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-320" y="212"/>
+        </scene>
+    </scenes>
+</document>
