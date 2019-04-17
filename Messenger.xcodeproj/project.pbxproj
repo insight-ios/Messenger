@@ -15,6 +15,7 @@
 		37691A282265C9A800C2BFF2 /* FriendsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37691A272265C9A800C2BFF2 /* FriendsList.storyboard */; };
 		37691A2A2265CA0E00C2BFF2 /* ChatList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37691A292265CA0E00C2BFF2 /* ChatList.storyboard */; };
 		37691A2D2265CBF700C2BFF2 /* ChatRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37691A2C2265CBF700C2BFF2 /* ChatRoom.storyboard */; };
+		5746AA3B2266F10100112399 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5746AA3A2266F10100112399 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		37691A292265CA0E00C2BFF2 /* ChatList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatList.storyboard; sourceTree = "<group>"; };
 		37691A2C2265CBF700C2BFF2 /* ChatRoom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatRoom.storyboard; sourceTree = "<group>"; };
 		48B41C10BC7DF0ECDBDAB17D /* Pods-Messenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.release.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.release.xcconfig"; sourceTree = "<group>"; };
+		5746AA3A2266F10100112399 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		849C38213F3797AA8C218E9F /* Pods-Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.debug.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.debug.xcconfig"; sourceTree = "<group>"; };
 		8ACACBE63413D768D7D82EAE /* Pods_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				37691A182265B57A00C2BFF2 /* Info.plist */,
+				5746AA3A2266F10100112399 /* GoogleService-Info.plist */,
 			);
 			name = SupportingFiles;
 			sourceTree = "<group>";
@@ -163,7 +166,6 @@
 				849C38213F3797AA8C218E9F /* Pods-Messenger.debug.xcconfig */,
 				48B41C10BC7DF0ECDBDAB17D /* Pods-Messenger.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -241,6 +243,7 @@
 				37691A2A2265CA0E00C2BFF2 /* ChatList.storyboard in Resources */,
 				37691A122265B57900C2BFF2 /* Root.storyboard in Resources */,
 				37691A2D2265CBF700C2BFF2 /* ChatRoom.storyboard in Resources */,
+				5746AA3B2266F10100112399 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
