@@ -15,6 +15,7 @@
 		37691A282265C9A800C2BFF2 /* FriendsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37691A272265C9A800C2BFF2 /* FriendsList.storyboard */; };
 		37691A2A2265CA0E00C2BFF2 /* ChatList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37691A292265CA0E00C2BFF2 /* ChatList.storyboard */; };
 		37691A2D2265CBF700C2BFF2 /* ChatRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37691A2C2265CBF700C2BFF2 /* ChatRoom.storyboard */; };
+		570E82532268081700C1516E /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E82522268081700C1516E /* ChatRoomViewController.swift */; };
 		5746AA3B2266F10100112399 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5746AA3A2266F10100112399 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		37691A292265CA0E00C2BFF2 /* ChatList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatList.storyboard; sourceTree = "<group>"; };
 		37691A2C2265CBF700C2BFF2 /* ChatRoom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatRoom.storyboard; sourceTree = "<group>"; };
 		48B41C10BC7DF0ECDBDAB17D /* Pods-Messenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.release.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.release.xcconfig"; sourceTree = "<group>"; };
+		570E82522268081700C1516E /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
 		5746AA3A2266F10100112399 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		849C38213F3797AA8C218E9F /* Pods-Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.debug.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.debug.xcconfig"; sourceTree = "<group>"; };
 		8ACACBE63413D768D7D82EAE /* Pods_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				37691A2C2265CBF700C2BFF2 /* ChatRoom.storyboard */,
+				570E82522268081700C1516E /* ChatRoomViewController.swift */,
 			);
 			path = ChatRoom;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Messenger/Pods-Messenger-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
@@ -294,6 +298,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
@@ -314,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37691A0D2265B57900C2BFF2 /* AppDelegate.swift in Sources */,
+				570E82532268081700C1516E /* ChatRoomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
