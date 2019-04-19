@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		092A3FA91AB628E320224EB8 /* Pods_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ACACBE63413D768D7D82EAE /* Pods_Messenger.framework */; };
+		372EC911226701C400BDECA4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372EC910226701C400BDECA4 /* User.swift */; };
+		372EC9132267FDDE00BDECA4 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372EC9122267FDDE00BDECA4 /* ChatListViewController.swift */; };
+		372EC91522680B6D00BDECA4 /* FiriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372EC91422680B6D00BDECA4 /* FiriendsListViewController.swift */; };
+		372EC91722680C1700BDECA4 /* FetchAllUsersUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372EC91622680C1700BDECA4 /* FetchAllUsersUsecase.swift */; };
 		37691A0D2265B57900C2BFF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37691A0C2265B57900C2BFF2 /* AppDelegate.swift */; };
 		37691A122265B57900C2BFF2 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37691A102265B57900C2BFF2 /* Root.storyboard */; };
 		37691A142265B57A00C2BFF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37691A132265B57A00C2BFF2 /* Assets.xcassets */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		372EC910226701C400BDECA4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		372EC9122267FDDE00BDECA4 /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		372EC91422680B6D00BDECA4 /* FiriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiriendsListViewController.swift; sourceTree = "<group>"; };
+		372EC91622680C1700BDECA4 /* FetchAllUsersUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAllUsersUsecase.swift; sourceTree = "<group>"; };
 		37691A092265B57900C2BFF2 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37691A0C2265B57900C2BFF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37691A112265B57900C2BFF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Root.storyboard; sourceTree = "<group>"; };
@@ -46,6 +54,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		372EC90D2267017B00BDECA4 /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				372EC91622680C1700BDECA4 /* FetchAllUsersUsecase.swift */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
+		372EC91A2268703A00BDECA4 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		37691A002265B57900C2BFF2 = {
 			isa = PBXGroup;
 			children = (
@@ -73,8 +96,10 @@
 				37691A242265B90200C2BFF2 /* Root */,
 				37691A1F2265B8B300C2BFF2 /* FriendsTab */,
 				37691A1E2265B8AA00C2BFF2 /* ChatTab */,
-				37691A212265B8C800C2BFF2 /* Model */,
+				372EC90D2267017B00BDECA4 /* Usecase */,
+				372EC91A2268703A00BDECA4 /* Helper */,
 				37691A232265B8E500C2BFF2 /* Extension */,
+				37691A212265B8C800C2BFF2 /* Model */,
 				37691A222265B8DF00C2BFF2 /* Resource */,
 			);
 			path = Messenger;
@@ -101,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				37691A272265C9A800C2BFF2 /* FriendsList.storyboard */,
+				372EC91422680B6D00BDECA4 /* FiriendsListViewController.swift */,
 			);
 			path = FriendsList;
 			sourceTree = "<group>";
@@ -108,6 +134,7 @@
 		37691A212265B8C800C2BFF2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				372EC910226701C400BDECA4 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				37691A292265CA0E00C2BFF2 /* ChatList.storyboard */,
+				372EC9122267FDDE00BDECA4 /* ChatListViewController.swift */,
 			);
 			path = ChatList;
 			sourceTree = "<group>";
@@ -315,7 +343,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372EC91522680B6D00BDECA4 /* FiriendsListViewController.swift in Sources */,
+				372EC91722680C1700BDECA4 /* FetchAllUsersUsecase.swift in Sources */,
+				372EC9132267FDDE00BDECA4 /* ChatListViewController.swift in Sources */,
 				37691A0D2265B57900C2BFF2 /* AppDelegate.swift in Sources */,
+				570E82532268081700C1516E /* ChatRoomViewController.swift in Sources */,
+				372EC911226701C400BDECA4 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
