@@ -10,20 +10,157 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Chatroom View Controller-->
         <scene sceneID="0ic-qD-DJ1">
             <objects>
-                <viewController id="e9L-lf-0pR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatroomViewController" id="e9L-lf-0pR" customClass="ChatroomViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nbq-5b-eEG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dP1-9j-r7Z">
+                                <rect key="frame" x="0.0" y="44" width="414" height="55"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHe-pX-KQE">
+                                        <rect key="frame" x="186.5" y="17.5" width="41" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdv-H8-wTN">
+                                        <rect key="frame" x="12" y="0.0" width="45" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="QDi-YY-WrC"/>
+                                        </constraints>
+                                        <state key="normal" title="back"/>
+                                        <connections>
+                                            <action selector="popVC:" destination="e9L-lf-0pR" eventType="touchUpInside" id="bHQ-xl-03r"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="iHe-pX-KQE" firstAttribute="centerY" secondItem="dP1-9j-r7Z" secondAttribute="centerY" id="AJI-Gr-ydb"/>
+                                    <constraint firstItem="tdv-H8-wTN" firstAttribute="leading" secondItem="dP1-9j-r7Z" secondAttribute="leading" constant="12" id="UuH-tT-vJv"/>
+                                    <constraint firstAttribute="bottom" secondItem="tdv-H8-wTN" secondAttribute="bottom" id="V7V-3Q-kTq"/>
+                                    <constraint firstAttribute="height" constant="55" id="XYi-2r-6k6"/>
+                                    <constraint firstItem="iHe-pX-KQE" firstAttribute="centerX" secondItem="dP1-9j-r7Z" secondAttribute="centerX" id="cyg-XV-ECb"/>
+                                    <constraint firstItem="tdv-H8-wTN" firstAttribute="top" secondItem="dP1-9j-r7Z" secondAttribute="top" id="lcX-66-0o3"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="y7i-as-6FB">
+                                <rect key="frame" x="0.0" y="99" width="414" height="763"/>
+                                <color key="backgroundColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="0Dv-4q-Rgl">
+                                    <size key="itemSize" width="412" height="60"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyTextChatBubbleCell" id="ayQ-rG-Esd" customClass="MyTextChatBubbleCell" customModule="Messenger" customModuleProvider="target">
+                                        <rect key="frame" x="1" y="0.0" width="412" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="412" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat_send" translatesAutoresizingMaskIntoConstraints="NO" id="vJc-ts-yh8">
+                                                    <rect key="frame" x="243.5" y="5" width="161.5" height="50"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아 요즘 너무 더워........" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y49-wD-cCe">
+                                                    <rect key="frame" x="251.5" y="15" width="128.5" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오전 9:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hY-tl-5IA">
+                                                    <rect key="frame" x="191" y="43" width="42.5" height="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="0.23821248689999999" blue="0.21332423510000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="vJc-ts-yh8" firstAttribute="top" secondItem="ayQ-rG-Esd" secondAttribute="top" constant="5" id="59E-gT-vl9"/>
+                                            <constraint firstItem="y49-wD-cCe" firstAttribute="trailing" secondItem="vJc-ts-yh8" secondAttribute="trailing" constant="-25" id="DRt-TM-cUS"/>
+                                            <constraint firstItem="y49-wD-cCe" firstAttribute="leading" secondItem="vJc-ts-yh8" secondAttribute="leading" constant="8" id="FYZ-Fk-53L"/>
+                                            <constraint firstAttribute="trailing" secondItem="vJc-ts-yh8" secondAttribute="trailing" constant="7" id="HD9-Tn-B4Z"/>
+                                            <constraint firstItem="y49-wD-cCe" firstAttribute="top" secondItem="vJc-ts-yh8" secondAttribute="top" constant="10" id="dkg-dX-J4b"/>
+                                            <constraint firstItem="8hY-tl-5IA" firstAttribute="bottom" secondItem="vJc-ts-yh8" secondAttribute="bottom" id="kfd-A8-5fS"/>
+                                            <constraint firstItem="vJc-ts-yh8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ayQ-rG-Esd" secondAttribute="leading" constant="100" id="l15-Gd-PIl"/>
+                                            <constraint firstItem="vJc-ts-yh8" firstAttribute="leading" secondItem="8hY-tl-5IA" secondAttribute="trailing" constant="10" id="rzJ-2D-Vgy"/>
+                                            <constraint firstItem="y49-wD-cCe" firstAttribute="bottom" secondItem="vJc-ts-yh8" secondAttribute="bottom" constant="-10" id="ssB-Af-En6"/>
+                                            <constraint firstAttribute="bottom" secondItem="vJc-ts-yh8" secondAttribute="bottom" constant="5" id="ta2-3j-dVC"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="contentsLabel" destination="y49-wD-cCe" id="shj-SC-lAE"/>
+                                            <outlet property="timeStampLabel" destination="8hY-tl-5IA" id="8Xu-iV-wze"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyImageChatBubbleCell" id="30n-aZ-PgR" customClass="MyImageChatBubbleCell" customModule="Messenger" customModuleProvider="target">
+                                        <rect key="frame" x="1" y="60" width="412" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="412" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StartChatTimestampCell" id="cZk-rJ-THx" customClass="StartChatTimestampCell" customModule="Messenger" customModuleProvider="target">
+                                        <rect key="frame" x="1" y="120" width="412" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="412" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendTextChatBubbleCell" id="Sy8-D8-7AZ" customClass="FriendTextChatBubbleCell" customModule="Messenger" customModuleProvider="target">
+                                        <rect key="frame" x="1" y="180" width="412" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="412" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendImageChatBubbleCell" id="M6f-d3-oiA" customClass="FriendImageChatBubbleCell" customModule="Messenger" customModuleProvider="target">
+                                        <rect key="frame" x="1" y="240" width="412" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="412" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="e9L-lf-0pR" id="fEg-dZ-7Yk"/>
+                                    <outlet property="delegate" destination="e9L-lf-0pR" id="2S1-Qe-InW"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dP1-9j-r7Z" firstAttribute="leading" secondItem="HCG-FW-sbt" secondAttribute="leading" id="4GR-sO-PwT"/>
+                            <constraint firstItem="y7i-as-6FB" firstAttribute="top" secondItem="dP1-9j-r7Z" secondAttribute="bottom" id="54X-bd-zpE"/>
+                            <constraint firstItem="HCG-FW-sbt" firstAttribute="trailing" secondItem="y7i-as-6FB" secondAttribute="trailing" id="61G-Bj-7O3"/>
+                            <constraint firstItem="y7i-as-6FB" firstAttribute="leading" secondItem="HCG-FW-sbt" secondAttribute="leading" id="8Fo-Rw-7aj"/>
+                            <constraint firstItem="dP1-9j-r7Z" firstAttribute="trailing" secondItem="HCG-FW-sbt" secondAttribute="trailing" id="TOw-tw-Vgx"/>
+                            <constraint firstItem="dP1-9j-r7Z" firstAttribute="top" secondItem="HCG-FW-sbt" secondAttribute="top" id="jRC-q5-f8G"/>
+                            <constraint firstItem="HCG-FW-sbt" firstAttribute="bottom" secondItem="y7i-as-6FB" secondAttribute="bottom" id="vcn-dy-iki"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HCG-FW-sbt"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="y7i-as-6FB" id="bOD-1W-42i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a47-Ld-iu6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-154" y="114"/>
+            <point key="canvasLocation" x="-155.07246376811597" y="113.83928571428571"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chat_send" width="41" height="32"/>
+    </resources>
 </document>

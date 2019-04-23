@@ -15,6 +15,12 @@
 		3731BDAD226D7C1D0097DF13 /* DownloadUserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3731BDAC226D7C1D0097DF13 /* DownloadUserImage.swift */; };
 		3731BDAF226D8EB70097DF13 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3731BDAE226D8EB70097DF13 /* UserStorage.swift */; };
 		3731BDB1226D949D0097DF13 /* ChatroomStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3731BDB0226D949D0097DF13 /* ChatroomStorage.swift */; };
+		3731BDB4226EC6C90097DF13 /* ChatroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3731BDB3226EC6C90097DF13 /* ChatroomViewController.swift */; };
+		3731BDB6226EC8140097DF13 /* MyTextChatBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3731BDB5226EC8140097DF13 /* MyTextChatBubbleCell.swift */; };
+		3731BDB8226EC84A0097DF13 /* MyImageChatBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3731BDB7226EC84A0097DF13 /* MyImageChatBubbleCell.swift */; };
+		3731BDBA226EC8670097DF13 /* StartChatTimestampCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3731BDB9226EC8670097DF13 /* StartChatTimestampCell.swift */; };
+		3731BDBC226EC8AF0097DF13 /* FriendTextChatBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3731BDBB226EC8AF0097DF13 /* FriendTextChatBubbleCell.swift */; };
+		3731BDBE226EC8F20097DF13 /* FriendImageChatBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3731BDBD226EC8F20097DF13 /* FriendImageChatBubbleCell.swift */; };
 		37450706226960E2002DF077 /* OneToOneChatListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37450705226960E2002DF077 /* OneToOneChatListCell.swift */; };
 		37450708226960FB002DF077 /* OneToTwoChatListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37450707226960FB002DF077 /* OneToTwoChatListCell.swift */; };
 		3745070A22696113002DF077 /* OneToThreeChatListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3745070922696113002DF077 /* OneToThreeChatListCell.swift */; };
@@ -40,6 +46,12 @@
 		3731BDAC226D7C1D0097DF13 /* DownloadUserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadUserImage.swift; sourceTree = "<group>"; };
 		3731BDAE226D8EB70097DF13 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserStorage.swift; path = Messenger/Usecase/UserStorage.swift; sourceTree = SOURCE_ROOT; };
 		3731BDB0226D949D0097DF13 /* ChatroomStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatroomStorage.swift; path = Messenger/Usecase/ChatroomStorage.swift; sourceTree = SOURCE_ROOT; };
+		3731BDB3226EC6C90097DF13 /* ChatroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomViewController.swift; sourceTree = "<group>"; };
+		3731BDB5226EC8140097DF13 /* MyTextChatBubbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextChatBubbleCell.swift; sourceTree = "<group>"; };
+		3731BDB7226EC84A0097DF13 /* MyImageChatBubbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImageChatBubbleCell.swift; sourceTree = "<group>"; };
+		3731BDB9226EC8670097DF13 /* StartChatTimestampCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartChatTimestampCell.swift; sourceTree = "<group>"; };
+		3731BDBB226EC8AF0097DF13 /* FriendTextChatBubbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTextChatBubbleCell.swift; sourceTree = "<group>"; };
+		3731BDBD226EC8F20097DF13 /* FriendImageChatBubbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendImageChatBubbleCell.swift; sourceTree = "<group>"; };
 		37450705226960E2002DF077 /* OneToOneChatListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneToOneChatListCell.swift; sourceTree = "<group>"; };
 		37450707226960FB002DF077 /* OneToTwoChatListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneToTwoChatListCell.swift; sourceTree = "<group>"; };
 		3745070922696113002DF077 /* OneToThreeChatListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneToThreeChatListCell.swift; sourceTree = "<group>"; };
@@ -91,6 +103,18 @@
 				3731BDB0226D949D0097DF13 /* ChatroomStorage.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		3731BDB2226EACD20097DF13 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3731BDB5226EC8140097DF13 /* MyTextChatBubbleCell.swift */,
+				3731BDB7226EC84A0097DF13 /* MyImageChatBubbleCell.swift */,
+				3731BDB9226EC8670097DF13 /* StartChatTimestampCell.swift */,
+				3731BDBB226EC8AF0097DF13 /* FriendTextChatBubbleCell.swift */,
+				3731BDBD226EC8F20097DF13 /* FriendImageChatBubbleCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		3745070D226993DA002DF077 /* Cells */ = {
@@ -212,6 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				37691A2C2265CBF700C2BFF2 /* ChatRoom.storyboard */,
+				3731BDB3226EC6C90097DF13 /* ChatroomViewController.swift */,
+				3731BDB2226EACD20097DF13 /* Cells */,
 			);
 			path = ChatRoom;
 			sourceTree = "<group>";
@@ -383,7 +409,9 @@
 			files = (
 				3745070A22696113002DF077 /* OneToThreeChatListCell.swift in Sources */,
 				372EC91522680B6D00BDECA4 /* FiriendsListViewController.swift in Sources */,
+				3731BDBE226EC8F20097DF13 /* FriendImageChatBubbleCell.swift in Sources */,
 				372EC91722680C1700BDECA4 /* FetchAllUsersUsecase.swift in Sources */,
+				3731BDB4226EC6C90097DF13 /* ChatroomViewController.swift in Sources */,
 				37450708226960FB002DF077 /* OneToTwoChatListCell.swift in Sources */,
 				3731BDAF226D8EB70097DF13 /* UserStorage.swift in Sources */,
 				372EC9132267FDDE00BDECA4 /* ChatListViewController.swift in Sources */,
@@ -391,8 +419,12 @@
 				374507112269957F002DF077 /* Message.swift in Sources */,
 				3745070F22699410002DF077 /* Chatroom.swift in Sources */,
 				37450706226960E2002DF077 /* OneToOneChatListCell.swift in Sources */,
+				3731BDBA226EC8670097DF13 /* StartChatTimestampCell.swift in Sources */,
+				3731BDB8226EC84A0097DF13 /* MyImageChatBubbleCell.swift in Sources */,
 				374507132269BB15002DF077 /* FetchAllChatroomsUsecase.swift in Sources */,
+				3731BDBC226EC8AF0097DF13 /* FriendTextChatBubbleCell.swift in Sources */,
 				3731BDAD226D7C1D0097DF13 /* DownloadUserImage.swift in Sources */,
+				3731BDB6226EC8140097DF13 /* MyTextChatBubbleCell.swift in Sources */,
 				3731BDB1226D949D0097DF13 /* ChatroomStorage.swift in Sources */,
 				372EC911226701C400BDECA4 /* User.swift in Sources */,
 				3745070C22696168002DF077 /* MultiChatListCell.swift in Sources */,

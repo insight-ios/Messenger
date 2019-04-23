@@ -73,6 +73,14 @@ extension ChatListViewController: UICollectionViewDataSource, UICollectionViewDe
         
         return UICollectionViewCell()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let chatroom = chatrooms?[indexPath.item] {
+            let chatroomVC = ChatroomViewController.create()
+            self.navigationController?.pushViewController(chatroomVC, animated: true)
+        }
+        
+    }
 }
 
 extension ChatListViewController: UICollectionViewDelegateFlowLayout {
