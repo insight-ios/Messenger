@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FiriendsListViewController: UIViewController {
+class FriendsListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
