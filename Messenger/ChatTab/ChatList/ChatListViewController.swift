@@ -9,32 +9,26 @@
 import UIKit
 import Firebase
 
-struct Message {
-    let date: String
-    let contents: String
-    let image: [String]?
-    let isRead: Bool
-    let senderID: String
-    
-}
-
 class ChatListViewController: UIViewController {
 
-    var allUsers: [User] = []
+    @IBOutlet weak var collectionView: UICollectionView!
+
+    var chatrooms: [Chatroom]? {
+        didSet {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    }
-    
-    @IBAction func fetchFriends(_ sender: Any) {
-        FetchAllUsersUsecase.shared.execute(completion: { users in
-            self.allUsers = users
-            print(self.allUsers)
+        ChatroomStorage.shared.allChatrooms(completion: { chatroomItems in 
+            self.chatrooms = chatroomItems
         })
-        
     }
-    
+
     static func create() -> ChatListViewController {
         let sb = UIStoryboard(name: "ChatList", bundle: nil)
         return sb.instantiateViewController(withIdentifier: "ChatListVC") as! ChatListViewController
@@ -42,6 +36,47 @@ class ChatListViewController: UIViewController {
 
 }
 
-private extension ChatListViewController {
+extension ChatListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let chatrooms = chatrooms else {
+            return 0
+        }
+        return chatrooms.count
+    }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let chatroom = chatrooms?[indexPath.item] {
+            switch chatroom.memberType {
+            case .oneToOne:
+                if let oneToOneCell = collectionView.dequeueReusableCell(withReuseIdentifier: "OneToOneChatListCell", for: indexPath) as? OneToOneChatListCell {
+                    oneToOneCell.chatroomItem = chatroom
+                    oneToOneCell.bind(memberID: chatroom.membersIDs[1])
+                    return oneToOneCell
+                }
+                
+            case .oneToTwo:
+                if let oneToTwoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "OneToTwoChatListCell", for: indexPath) as? OneToTwoChatListCell {
+                    return oneToTwoCell
+                }
+                
+            case .oneToThree:
+                if let oneToThreeCell = collectionView.dequeueReusableCell(withReuseIdentifier: "OneToThreeChatListCell", for: indexPath) as? OneToThreeChatListCell {
+                    return oneToThreeCell
+                }
+                
+            case .oneToMulti:
+                if let multiChatCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MultiChatListCell", for: indexPath) as? MultiChatListCell {
+                    return multiChatCell
+                }
+            }
+        }
+        
+        return UICollectionViewCell()
+    }
+}
+
+extension ChatListViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: 60)
+    }
 }

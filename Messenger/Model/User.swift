@@ -7,22 +7,27 @@
 //
 
 import Foundation
-import Firebase
 
 struct User {
     let userID: String
     var nickname: String
     var statusMessage: String?
-    var profileImage: String?
-    var profileBackgroundImage: String?
+    var profileImageURL: String?
+    var profileBackgroundImageURL: String?
     var documentID: String?
     
-    init(userID: String, nickname: String, statusMessage: String, profileImage: String?, profileBackgroundImage: String?) {
+    init(userID: String, nickname: String, statusMessage: String, profileImageURL: String?, profileBackgroundImageURL: String?) {
         self.userID = userID
         self.nickname = nickname
         self.statusMessage = statusMessage
-        self.profileImage = profileImage
-        self.profileBackgroundImage = profileBackgroundImage
+        
+        if let `profileImageURL` = profileImageURL {
+            self.profileImageURL = profileImageURL
+        }
+        
+        if let `profileBackgroundImageURL` = profileBackgroundImageURL {
+            self.profileBackgroundImageURL = profileBackgroundImageURL
+        }
     }
     
     init?(dict: [String: Any], documentID: String) {
@@ -33,10 +38,10 @@ struct User {
         }
         
         let statusMessage = dict["statusMessage"] as? String ?? ""
-        let profileImage = dict["profileImage"] as? String ?? "defaultProfileImage"
-        let profileBackgroundImage = dict["profileBackgroundImage"] as? String ?? "defaultProfileBackgroundImage"
+        let profileImage = dict["profileImage"] as? String ?? "defaultProfileImage.jpg"
+        let profileBackgroundImage = dict["profileBackgroundImage"] as? String ?? "defaultProfileBackgroundImage.png"
         
-        self.init(userID: userID, nickname: nickname, statusMessage: statusMessage, profileImage: profileImage, profileBackgroundImage: profileBackgroundImage)
+        self.init(userID: userID, nickname: nickname, statusMessage: statusMessage, profileImageURL: profileImage, profileBackgroundImageURL: profileBackgroundImage)
     }
     
     func toDictionary() -> [String: Any] {
@@ -44,8 +49,8 @@ struct User {
             "id": userID,
             "nickname": nickname,
             "statusMessage": statusMessage,
-            "profileImage": profileImage,
-            "profileBackgroundImage": profileBackgroundImage
+            "profileImage": profileImageURL,
+            "profileBackgroundImage": profileBackgroundImageURL
         ]
         return dict
     }

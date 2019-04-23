@@ -25,6 +25,7 @@ class FetchAllUsersUsecase {
         database.collection(collectionKey).getDocuments { querySnapshot, error in
             if let error = error {
                 print(error)
+                return
             }
             
             guard let querySnapshot = querySnapshot else {
@@ -42,4 +43,32 @@ class FetchAllUsersUsecase {
             completion(users)
         }
     }
+    
+    func searchUser(id: String, completion: @escaping (User) -> Void) {
+        let database = Firestore.firestore()
+        var user: User!
+        
+        database.collection(collectionKey).whereField("id", isEqualTo: id)
+            .getDocuments { querySnapshot, error in
+                if let error = error {
+                    print(error)
+                    return
+                }
+                
+                guard let querySnapshot = querySnapshot else {
+                    print(Errors.queryFailedError)
+                    return
+                }
+                
+                user = querySnapshot.documents
+                    .map { $0.data() }
+                    .compactMap { document -> User? in
+                        let user = User(dict: document, documentID: id)
+                        return user
+                }.first
+            
+            completion(user)
+        }
+    }
+    
 }
