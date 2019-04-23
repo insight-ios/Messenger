@@ -10,7 +10,7 @@
 		092A3FA91AB628E320224EB8 /* Pods_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ACACBE63413D768D7D82EAE /* Pods_Messenger.framework */; };
 		372EC911226701C400BDECA4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372EC910226701C400BDECA4 /* User.swift */; };
 		372EC9132267FDDE00BDECA4 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372EC9122267FDDE00BDECA4 /* ChatListViewController.swift */; };
-		372EC91522680B6D00BDECA4 /* FiriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372EC91422680B6D00BDECA4 /* FiriendsListViewController.swift */; };
+		372EC91522680B6D00BDECA4 /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372EC91422680B6D00BDECA4 /* FriendsListViewController.swift */; };
 		372EC91722680C1700BDECA4 /* FetchAllUsersUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372EC91622680C1700BDECA4 /* FetchAllUsersUsecase.swift */; };
 		3731BDAD226D7C1D0097DF13 /* DownloadUserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3731BDAC226D7C1D0097DF13 /* DownloadUserImage.swift */; };
 		3731BDAF226D8EB70097DF13 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3731BDAE226D8EB70097DF13 /* UserStorage.swift */; };
@@ -30,12 +30,14 @@
 		37691A2A2265CA0E00C2BFF2 /* ChatList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37691A292265CA0E00C2BFF2 /* ChatList.storyboard */; };
 		37691A2D2265CBF700C2BFF2 /* ChatRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37691A2C2265CBF700C2BFF2 /* ChatRoom.storyboard */; };
 		5746AA3B2266F10100112399 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5746AA3A2266F10100112399 /* GoogleService-Info.plist */; };
+		57F4504B226EDB550034CE35 /* DefaultUserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F4504A226EDB550034CE35 /* DefaultUserListCell.swift */; };
+		57F4504D226EFBF10034CE35 /* FriendListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F4504C226EFBF10034CE35 /* FriendListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		372EC910226701C400BDECA4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		372EC9122267FDDE00BDECA4 /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
-		372EC91422680B6D00BDECA4 /* FiriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiriendsListViewController.swift; sourceTree = "<group>"; };
+		372EC91422680B6D00BDECA4 /* FriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
 		372EC91622680C1700BDECA4 /* FetchAllUsersUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAllUsersUsecase.swift; sourceTree = "<group>"; };
 		3731BDAC226D7C1D0097DF13 /* DownloadUserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadUserImage.swift; sourceTree = "<group>"; };
 		3731BDAE226D8EB70097DF13 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserStorage.swift; path = Messenger/Usecase/UserStorage.swift; sourceTree = SOURCE_ROOT; };
@@ -58,6 +60,8 @@
 		37691A2C2265CBF700C2BFF2 /* ChatRoom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatRoom.storyboard; sourceTree = "<group>"; };
 		48B41C10BC7DF0ECDBDAB17D /* Pods-Messenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.release.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.release.xcconfig"; sourceTree = "<group>"; };
 		5746AA3A2266F10100112399 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		57F4504A226EDB550034CE35 /* DefaultUserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserListCell.swift; sourceTree = "<group>"; };
+		57F4504C226EFBF10034CE35 /* FriendListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListCell.swift; sourceTree = "<group>"; };
 		849C38213F3797AA8C218E9F /* Pods-Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.debug.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.debug.xcconfig"; sourceTree = "<group>"; };
 		8ACACBE63413D768D7D82EAE /* Pods_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -160,8 +164,9 @@
 		37691A202265B8BD00C2BFF2 /* FriendsList */ = {
 			isa = PBXGroup;
 			children = (
+				372EC91422680B6D00BDECA4 /* FriendsListViewController.swift */,
 				37691A272265C9A800C2BFF2 /* FriendsList.storyboard */,
-				372EC91422680B6D00BDECA4 /* FiriendsListViewController.swift */,
+				57F45049226ED2D80034CE35 /* Cells */,
 			);
 			path = FriendsList;
 			sourceTree = "<group>";
@@ -233,6 +238,15 @@
 				48B41C10BC7DF0ECDBDAB17D /* Pods-Messenger.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		57F45049226ED2D80034CE35 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				57F4504A226EDB550034CE35 /* DefaultUserListCell.swift */,
+				57F4504C226EFBF10034CE35 /* FriendListCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		EC12085ACE76965092E8EAFB /* Frameworks */ = {
@@ -382,9 +396,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3745070A22696113002DF077 /* OneToThreeChatListCell.swift in Sources */,
-				372EC91522680B6D00BDECA4 /* FiriendsListViewController.swift in Sources */,
+				372EC91522680B6D00BDECA4 /* FriendsListViewController.swift in Sources */,
 				372EC91722680C1700BDECA4 /* FetchAllUsersUsecase.swift in Sources */,
 				37450708226960FB002DF077 /* OneToTwoChatListCell.swift in Sources */,
+				57F4504B226EDB550034CE35 /* DefaultUserListCell.swift in Sources */,
 				3731BDAF226D8EB70097DF13 /* UserStorage.swift in Sources */,
 				372EC9132267FDDE00BDECA4 /* ChatListViewController.swift in Sources */,
 				37691A0D2265B57900C2BFF2 /* AppDelegate.swift in Sources */,
@@ -395,6 +410,7 @@
 				3731BDAD226D7C1D0097DF13 /* DownloadUserImage.swift in Sources */,
 				3731BDB1226D949D0097DF13 /* ChatroomStorage.swift in Sources */,
 				372EC911226701C400BDECA4 /* User.swift in Sources */,
+				57F4504D226EFBF10034CE35 /* FriendListCell.swift in Sources */,
 				3745070C22696168002DF077 /* MultiChatListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
