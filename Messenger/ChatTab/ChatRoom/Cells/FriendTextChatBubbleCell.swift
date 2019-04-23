@@ -8,6 +8,20 @@
 
 import UIKit
 
-class FriendTextChatBubbleCell: UICollectionViewCell {
+class FriendTextChatBubbleCell: UITableViewCell {
     
+    @IBOutlet weak var friendProfileImageView: UIImageView!
+    @IBOutlet weak var nickNameLabel: UILabel!
+    @IBOutlet weak var chatMessageLabel: UILabel!
+    @IBOutlet weak var lastTalkedTimestampLabel: UILabel!
+    
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        friendProfileImageView.image = nil
+        nickNameLabel.text = ""
+        chatMessageLabel.text = ""
+        lastTalkedTimestampLabel.text = ""
+    }
 }

@@ -8,6 +8,15 @@
 
 import UIKit
 
-class MyImageChatBubbleCell: UICollectionViewCell {
+class MyImageChatBubbleCell: UITableViewCell {
     
+    @IBOutlet weak var chatMessageImageView: UIImageView!
+    @IBOutlet weak var lastTalkedTimestampLabel: UILabel!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        chatMessageImageView.image = nil
+        lastTalkedTimestampLabel.text = ""
+    }
 }

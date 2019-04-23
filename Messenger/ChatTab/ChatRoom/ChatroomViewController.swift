@@ -10,14 +10,11 @@ import UIKit
 
 class ChatroomViewController: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = CGSize(width: collectionView.bounds.width, height: 40)
-        }
     }
     
     @IBAction func popVC(_ sender: Any) {
@@ -31,37 +28,32 @@ class ChatroomViewController: UIViewController {
     
 }
 
-extension ChatroomViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 5
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension ChatroomViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let myTextBubbleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyTextChatBubbleCell", for: indexPath) as! MyTextChatBubbleCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let myTextBubbleCell = tableView.dequeueReusableCell(withIdentifier: "MyTextChatBubbleCell", for: indexPath) as! MyTextChatBubbleCell
         return myTextBubbleCell
         
         
-//        if let myImageBubbleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyImageChatBubbleCell", for: indexPath) as? MyImageChatBubbleCell {
+//        if let myImageBubbleCell = tableView.dequeueReusableCell(withReuseIdentifier: "MyImageChatBubbleCell", for: indexPath) as? MyImageChatBubbleCell {
 //            return myImageBubbleCell
 //        }
 //
-//        if let startChatTimestampCell = collectionView.dequeueReusableCell(withReuseIdentifier: "StartChatTimestampCell", for: indexPath) as? StartChatTimestampCell {
+//        if let startChatTimestampCell = tableView.dequeueReusableCell(withReuseIdentifier: "StartChatTimestampCell", for: indexPath) as? StartChatTimestampCell {
 //            return startChatTimestampCell
 //        }
 //
-//        if let friendTextBubbleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendTextChatBubbleCell", for: indexPath) as? FriendTextChatBubbleCell {
+//        if let friendTextBubbleCell = tableView.dequeueReusableCell(withReuseIdentifier: "FriendTextChatBubbleCell", for: indexPath) as? FriendTextChatBubbleCell {
 //            return friendTextBubbleCell
 //        }
 //
-//        if let friendImageBubbleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendImageChatBubbleCell", for: indexPath) as? FriendImageChatBubbleCell {
+//        if let friendImageBubbleCell = tableView.dequeueReusableCell(withReuseIdentifier: "FriendImageChatBubbleCell", for: indexPath) as? FriendImageChatBubbleCell {
 //            return friendImageBubbleCell
 //        }
 //
-//        return UICollectionViewCell()
+//        return UITableViewCell()
     }
     
 }

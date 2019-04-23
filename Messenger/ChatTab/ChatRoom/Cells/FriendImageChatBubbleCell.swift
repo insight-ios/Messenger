@@ -8,6 +8,15 @@
 
 import UIKit
 
-class FriendImageChatBubbleCell: UICollectionViewCell {
+class FriendImageChatBubbleCell: UITableViewCell {
     
+    @IBOutlet weak var friendProfileImageView: UIImageView!
+    @IBOutlet weak var nickNameLabel: UILabel!
+    @IBOutlet weak var chatMessageImageView: UIImageView!
+    
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+    }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyTextChatBubbleCell: UICollectionViewCell {
+class MyTextChatBubbleCell: UITableViewCell {
     
     @IBOutlet weak var contentsLabel: UILabel!
     @IBOutlet weak var timeStampLabel: UILabel!
