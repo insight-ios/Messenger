@@ -77,6 +77,7 @@ extension ChatListViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let chatroom = chatrooms?[indexPath.item] {
             let chatroomVC = ChatroomViewController.create()
+            chatroomVC.chatRoom = chatroom
             self.navigationController?.pushViewController(chatroomVC, animated: true)
         }
         

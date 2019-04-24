@@ -12,11 +12,14 @@ class ChatroomViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var chatRoom: Chatroom!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 50
+        
     }
     
     @IBAction func popVC(_ sender: Any) {

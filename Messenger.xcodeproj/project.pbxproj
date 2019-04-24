@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		092A3FA91AB628E320224EB8 /* Pods_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ACACBE63413D768D7D82EAE /* Pods_Messenger.framework */; };
 		371FCF60227019400034DA9D /* TimestampTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FCF5F227019400034DA9D /* TimestampTableViewCell.swift */; };
+		371FCF6222702EBE0034DA9D /* FetchMessageUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FCF6122702EBE0034DA9D /* FetchMessageUsecase.swift */; };
+		371FCF642270338F0034DA9D /* MessageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FCF632270338F0034DA9D /* MessageStorage.swift */; };
 		372EC911226701C400BDECA4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372EC910226701C400BDECA4 /* User.swift */; };
 		372EC9132267FDDE00BDECA4 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372EC9122267FDDE00BDECA4 /* ChatListViewController.swift */; };
 		372EC91522680B6D00BDECA4 /* FiriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372EC91422680B6D00BDECA4 /* FiriendsListViewController.swift */; };
@@ -41,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		371FCF5F227019400034DA9D /* TimestampTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampTableViewCell.swift; sourceTree = "<group>"; };
+		371FCF6122702EBE0034DA9D /* FetchMessageUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMessageUsecase.swift; sourceTree = "<group>"; };
+		371FCF632270338F0034DA9D /* MessageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MessageStorage.swift; path = Messenger/Usecase/MessageStorage.swift; sourceTree = SOURCE_ROOT; };
 		372EC910226701C400BDECA4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		372EC9122267FDDE00BDECA4 /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		372EC91422680B6D00BDECA4 /* FiriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiriendsListViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 				372EC91622680C1700BDECA4 /* FetchAllUsersUsecase.swift */,
 				3731BDAC226D7C1D0097DF13 /* DownloadUserImage.swift */,
 				374507122269BB15002DF077 /* FetchAllChatroomsUsecase.swift */,
+				371FCF6122702EBE0034DA9D /* FetchMessageUsecase.swift */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -103,6 +108,7 @@
 			children = (
 				3731BDAE226D8EB70097DF13 /* UserStorage.swift */,
 				3731BDB0226D949D0097DF13 /* ChatroomStorage.swift */,
+				371FCF632270338F0034DA9D /* MessageStorage.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -411,6 +417,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3745070A22696113002DF077 /* OneToThreeChatListCell.swift in Sources */,
+				371FCF642270338F0034DA9D /* MessageStorage.swift in Sources */,
+				371FCF6222702EBE0034DA9D /* FetchMessageUsecase.swift in Sources */,
 				372EC91522680B6D00BDECA4 /* FiriendsListViewController.swift in Sources */,
 				3731BDBE226EC8F20097DF13 /* FriendImageChatBubbleCell.swift in Sources */,
 				372EC91722680C1700BDECA4 /* FetchAllUsersUsecase.swift in Sources */,

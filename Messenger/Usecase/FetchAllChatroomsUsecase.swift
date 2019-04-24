@@ -36,6 +36,7 @@ class FetchAllChatroomsUsecase {
                     .map { ($0.data(), $0.documentID) }
                     .compactMap { document, id -> Chatroom? in
                         let chatroom = Chatroom(dict: document, documentID: id, messagesIDs: nil)
+                        print("************ FetchAllChatroomUsecase documentID = \(id) *********")
                         return chatroom
                 }
             completion(chatrooms)

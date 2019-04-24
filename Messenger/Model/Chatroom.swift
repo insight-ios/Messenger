@@ -17,18 +17,16 @@ enum ChatMemberType {
 
 struct Chatroom {
     var membersIDs: [String]
-    var chatroomID: String?
+    var chatroomID: Int?
     let memberType: ChatMemberType
     var messagesIDs: [String]?
     
-    init(membersIDs: [String], chatroomID: String?, messagesIDs: [String]?) {
+    init(membersIDs: [String], chatroomID: Int?, messagesIDs: [String]?) {
         self.membersIDs = membersIDs
         if chatroomID != nil {
             self.chatroomID = chatroomID
         } else {
-            var iDs = ""
-            membersIDs.forEach { iDs.append($0) }
-            self.chatroomID = iDs
+            self.chatroomID = ChatroomStorage.shared.createChatroomID()
         }
         self.messagesIDs = messagesIDs
         
@@ -47,7 +45,7 @@ struct Chatroom {
     init?(dict: [String: Any], documentID: String, messagesIDs: [String]?) {
         guard
             let membersIDs = dict["membersIDs"] as? [String],
-            let chatroomID = dict["chatroomID"] as? String,
+            let chatroomID = dict["chatroomID"] as? Int,
             let messagesIDs = dict["messagesIDs"] as? [String] else {
                 return nil
         }
@@ -63,7 +61,7 @@ struct Chatroom {
         return dic
     }
     
-    mutating func setChatroomID(id: String) {
+    mutating func setChatroomID(id: Int) {
         self.chatroomID = id
     }
 }
