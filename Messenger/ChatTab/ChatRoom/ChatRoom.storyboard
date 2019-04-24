@@ -34,7 +34,7 @@
                                         </constraints>
                                         <state key="normal" title="back"/>
                                         <connections>
-                                            <action selector="popVC:" destination="e6f-Zp-Y3E" eventType="touchUpInside" id="xAp-jy-bqB"/>
+                                            <action selector="popVC:" destination="e6f-Zp-Y3E" eventType="touchUpInside" id="nkd-yu-bCe"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -283,6 +283,50 @@
                                             <outlet property="chatMessageImageView" destination="DrY-PY-TbQ" id="jPb-iG-0dZ"/>
                                             <outlet property="friendProfileImageView" destination="7aP-E0-37Z" id="SbC-Dn-87Y"/>
                                             <outlet property="nickNameLabel" destination="fW5-26-tA3" id="qPG-FG-i5a"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TimestampTableViewCell" rowHeight="45" id="i9f-Nj-y5c" customClass="TimestampTableViewCell" customModule="Messenger" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="624" width="414" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i9f-Nj-y5c" id="UOL-5l-jIi">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLi-jW-9kd">
+                                                    <rect key="frame" x="11" y="22" width="124" height="1"/>
+                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="0.59999999999999998" id="Of8-AI-e4R"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019년 4월 24일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSH-hY-GNq">
+                                                    <rect key="frame" x="159" y="14.5" width="96" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rET-Hs-Qwg">
+                                                    <rect key="frame" x="276" y="22" width="127" height="1"/>
+                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="0.59999999999999998" id="iNI-qR-sVg"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rET-Hs-Qwg" firstAttribute="centerY" secondItem="UOL-5l-jIi" secondAttribute="centerY" id="COZ-05-urV"/>
+                                                <constraint firstItem="BLi-jW-9kd" firstAttribute="leading" secondItem="UOL-5l-jIi" secondAttribute="leading" constant="11" id="FT0-h1-eZR"/>
+                                                <constraint firstAttribute="trailing" secondItem="rET-Hs-Qwg" secondAttribute="trailing" constant="11" id="LMZ-Si-80L"/>
+                                                <constraint firstItem="eSH-hY-GNq" firstAttribute="centerY" secondItem="UOL-5l-jIi" secondAttribute="centerY" id="PCl-f7-6oA"/>
+                                                <constraint firstItem="eSH-hY-GNq" firstAttribute="leading" secondItem="BLi-jW-9kd" secondAttribute="trailing" constant="24" id="Rse-kM-xEL"/>
+                                                <constraint firstItem="rET-Hs-Qwg" firstAttribute="leading" secondItem="eSH-hY-GNq" secondAttribute="trailing" constant="21" id="iVO-9s-Lbb"/>
+                                                <constraint firstItem="eSH-hY-GNq" firstAttribute="centerX" secondItem="UOL-5l-jIi" secondAttribute="centerX" id="pyc-lU-Ctb"/>
+                                                <constraint firstItem="BLi-jW-9kd" firstAttribute="centerY" secondItem="UOL-5l-jIi" secondAttribute="centerY" id="z24-q5-1GB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="timestampLabel" destination="eSH-hY-GNq" id="eMZ-2B-r7O"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

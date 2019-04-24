@@ -20,7 +20,7 @@ class ChatroomViewController: UIViewController {
     }
     
     @IBAction func popVC(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     static func create() -> ChatroomViewController {

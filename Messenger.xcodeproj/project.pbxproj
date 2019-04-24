@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		092A3FA91AB628E320224EB8 /* Pods_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ACACBE63413D768D7D82EAE /* Pods_Messenger.framework */; };
+		371FCF60227019400034DA9D /* TimestampTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FCF5F227019400034DA9D /* TimestampTableViewCell.swift */; };
 		372EC911226701C400BDECA4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372EC910226701C400BDECA4 /* User.swift */; };
 		372EC9132267FDDE00BDECA4 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372EC9122267FDDE00BDECA4 /* ChatListViewController.swift */; };
 		372EC91522680B6D00BDECA4 /* FiriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372EC91422680B6D00BDECA4 /* FiriendsListViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		371FCF5F227019400034DA9D /* TimestampTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampTableViewCell.swift; sourceTree = "<group>"; };
 		372EC910226701C400BDECA4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		372EC9122267FDDE00BDECA4 /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		372EC91422680B6D00BDECA4 /* FiriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiriendsListViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				3731BDB9226EC8670097DF13 /* StartChatTimestampCell.swift */,
 				3731BDBB226EC8AF0097DF13 /* FriendTextChatBubbleCell.swift */,
 				3731BDBD226EC8F20097DF13 /* FriendImageChatBubbleCell.swift */,
+				371FCF5F227019400034DA9D /* TimestampTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				374507112269957F002DF077 /* Message.swift in Sources */,
 				3745070F22699410002DF077 /* Chatroom.swift in Sources */,
 				37450706226960E2002DF077 /* OneToOneChatListCell.swift in Sources */,
+				371FCF60227019400034DA9D /* TimestampTableViewCell.swift in Sources */,
 				3731BDBA226EC8670097DF13 /* StartChatTimestampCell.swift in Sources */,
 				3731BDB8226EC84A0097DF13 /* MyImageChatBubbleCell.swift in Sources */,
 				374507132269BB15002DF077 /* FetchAllChatroomsUsecase.swift in Sources */,
