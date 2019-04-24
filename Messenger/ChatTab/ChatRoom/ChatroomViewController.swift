@@ -16,7 +16,7 @@ class ChatroomViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 72
+        tableView.estimatedRowHeight = 50
     }
     
     @IBAction func popVC(_ sender: Any) {
@@ -32,31 +32,35 @@ class ChatroomViewController: UIViewController {
 
 extension ChatroomViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let myTextBubbleCell = tableView.dequeueReusableCell(withIdentifier: "MyTextChatBubbleCell", for: indexPath) as! MyTextChatBubbleCell
-        return myTextBubbleCell
+        if indexPath.row == 0 {
+            let myTextBubbleCell = tableView.dequeueReusableCell(withIdentifier: "MyTextChatBubbleCell", for: indexPath) as! MyTextChatBubbleCell
+            return myTextBubbleCell
+        } else {
+            if let friendTextBubbleCell = tableView.dequeueReusableCell(withIdentifier: "FriendTextChatBubbleCell", for: indexPath) as? FriendTextChatBubbleCell {
+                return friendTextBubbleCell
+            }
+        }
         
         
-//        if let myImageBubbleCell = tableView.dequeueReusableCell(withReuseIdentifier: "MyImageChatBubbleCell", for: indexPath) as? MyImageChatBubbleCell {
+//        if let myImageBubbleCell = tableView.dequeueReusableCell(withIdentifier: "MyImageChatBubbleCell", for: indexPath) as? MyImageChatBubbleCell {
 //            return myImageBubbleCell
 //        }
 //
-//        if let startChatTimestampCell = tableView.dequeueReusableCell(withReuseIdentifier: "StartChatTimestampCell", for: indexPath) as? StartChatTimestampCell {
+//        if let startChatTimestampCell = tableView.dequeueReusableCell(withIdentifier: "StartChatTimestampCell", for: indexPath) as? StartChatTimestampCell {
 //            return startChatTimestampCell
 //        }
 //
-//        if let friendTextBubbleCell = tableView.dequeueReusableCell(withReuseIdentifier: "FriendTextChatBubbleCell", for: indexPath) as? FriendTextChatBubbleCell {
-//            return friendTextBubbleCell
-//        }
+
 //
-//        if let friendImageBubbleCell = tableView.dequeueReusableCell(withReuseIdentifier: "FriendImageChatBubbleCell", for: indexPath) as? FriendImageChatBubbleCell {
+//        if let friendImageBubbleCell = tableView.dequeueReusableCell(withIdentifier: "FriendImageChatBubbleCell", for: indexPath) as? FriendImageChatBubbleCell {
 //            return friendImageBubbleCell
 //        }
 //
-//        return UITableViewCell()
+        return UITableViewCell()
     }
     
 }

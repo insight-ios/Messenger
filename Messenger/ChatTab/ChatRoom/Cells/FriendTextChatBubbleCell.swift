@@ -13,6 +13,7 @@ class FriendTextChatBubbleCell: UITableViewCell {
     @IBOutlet weak var friendProfileImageView: UIImageView!
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var chatMessageLabel: UILabel!
+    @IBOutlet weak var chatBubbleView: UIView!
     @IBOutlet weak var lastTalkedTimestampLabel: UILabel!
     
     
@@ -23,5 +24,13 @@ class FriendTextChatBubbleCell: UITableViewCell {
         nickNameLabel.text = ""
         chatMessageLabel.text = ""
         lastTalkedTimestampLabel.text = ""
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        friendProfileImageView.layer.cornerRadius = friendProfileImageView.frame.height * 0.48
+        chatBubbleView.layer.cornerRadius = 8
+        chatMessageLabel.text = "dsjdshkjshkjfhskhdjsk ahdsjalidsajlsjsjshd isajasjsjdsjdksjl asjdkljljsjsj hs18172893719797"
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class MyTextChatBubbleCell: UITableViewCell {
     
-    @IBOutlet weak var chatBubbleImage: UIImageView!
+    @IBOutlet weak var chatBubbleView: UIView!
     @IBOutlet weak var contentsLabel: UILabel!
     @IBOutlet weak var timeStampLabel: UILabel!
     
@@ -23,8 +23,8 @@ class MyTextChatBubbleCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        let bubbleImage = UIImage(named: "myChatBubble")?.resizableImage(withCapInsets: UIEdgeInsets(top: 1.0, left: 1.8, bottom: 1.0, right: 1.0), resizingMode: .stretch)
-        chatBubbleImage.image = bubbleImage
+        chatBubbleView.layer.cornerRadius = 8
+        contentsLabel.text = "얄루얄루얄라셩얄라리얄라....edkjfkjkkddkskdjlsjldkjfakjdlfsk djfksjdksjfks skjdkflj()dfkjslkd"
     }
+
 }
