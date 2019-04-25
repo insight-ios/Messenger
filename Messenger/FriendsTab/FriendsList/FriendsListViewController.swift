@@ -37,29 +37,36 @@ class FriendsListViewController: UIViewController {
 extension FriendsListViewController:  UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       
-        if (section == 0) { return 1 }
-
-        else if (section == 1) { return 1 }
-
-        else {
-            guard let users = users else {
-                return 0
-            }
-            return users.count
+        
+        guard let _ = users else {
+            return 0
         }
+        
+        return 1
+        
+       
+//       if (section == 0) { return 1 }
+//
+//        else if (section == 1) { return 1 }
+//
+//        else {
+//            guard let users = users else {
+//                return 0
+//            }
+//            return users.count
+//        }
+        
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let users = users?[indexPath.item]{
-            if(indexPath.section == 0){
-            if let userListCell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserListCell", for: indexPath) as? UserListCell {
-                    userListCell.userItem = users
+        if let user = users?[indexPath.item]{
+//            if(indexPath.section == 0){
+                 let userListCell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserListCell", for: indexPath) as! UserListCell
+                    userListCell.userItem = user
                     userListCell.bind(memberID: "0000")
                     return userListCell
-                }
-            }
+//               }
         }
         return UICollectionViewCell()
     }

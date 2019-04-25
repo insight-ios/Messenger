@@ -25,6 +25,7 @@ class UserListCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        userProfileImageView.layer.cornerRadius = userProfileImageView.frame.height * 0.48
     }
     
     func resetUI(){
