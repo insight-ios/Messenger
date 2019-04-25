@@ -48,8 +48,8 @@ class FetchAllUsersUsecase {
         let database = Firestore.firestore()
         var user: User!
         
-        database.collection(collectionKey).whereField("id", isEqualTo: id)
-            .getDocuments { querySnapshot, error in
+        database.collection(collectionKey).document(id)
+            .getDocument { querySnapshot, error in
                 if let error = error {
                     print(error)
                     return
@@ -60,13 +60,7 @@ class FetchAllUsersUsecase {
                     return
                 }
                 
-                user = querySnapshot.documents
-                    .map { $0.data() }
-                    .compactMap { document -> User? in
-                        let user = User(dict: document, documentID: id)
-                        return user
-                }.first
-            
+                user = User(dict: querySnapshot.data()!, documentID: id)
             completion(user)
         }
     }

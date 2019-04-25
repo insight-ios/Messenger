@@ -24,7 +24,7 @@ class ChatListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ChatroomStorage.shared.allChatrooms(completion: { chatroomItems in 
+        ChatroomStorage.shared.allChatrooms(completion: { chatroomItems in
             self.chatrooms = chatroomItems
         })
     }
