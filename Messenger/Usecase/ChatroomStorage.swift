@@ -11,12 +11,25 @@ import UIKit
 
 class ChatroomStorage {
     static let shared = ChatroomStorage()
+    var chatroomItems: [Chatroom]!
     
     func allChatrooms(completion: @escaping ([Chatroom]) -> Void) {
         FetchAllChatroomsUsecase.shared.execute(completion: { chatroomItems in
-            print("chatroomItems -- > \(chatroomItems)")
+            print("*** ChatroomStorage     chatroomItems -- > \(chatroomItems)")
+            self.chatroomItems = chatroomItems
             completion(chatroomItems)
         })
     }
     
+    func createChatroomID() -> String {
+        print("chatroomItems.count = \(self.chatroomItems.count)")
+        print("new chatroomID = \(self.chatroomItems.count + 1)")
+        return String(self.chatroomItems.count + 1)
+    }
+    
+    func members(of chatroomID: String, completion: @escaping ([String]) -> Void) {
+        FetchAllChatroomsUsecase.shared.membersIDs(of: chatroomID, completion: { members in
+            completion(members)
+        })
+    }
 }

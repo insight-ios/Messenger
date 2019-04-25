@@ -24,7 +24,7 @@ class ChatListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ChatroomStorage.shared.allChatrooms(completion: { chatroomItems in 
+        ChatroomStorage.shared.allChatrooms(completion: { chatroomItems in
             self.chatrooms = chatroomItems
         })
     }
@@ -56,6 +56,8 @@ extension ChatListViewController: UICollectionViewDataSource, UICollectionViewDe
                 
             case .oneToTwo:
                 if let oneToTwoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "OneToTwoChatListCell", for: indexPath) as? OneToTwoChatListCell {
+                    oneToTwoCell.chatroomItem = chatroom
+                    oneToTwoCell.bind(memberIDs: chatroom.membersIDs)
                     return oneToTwoCell
                 }
                 
@@ -72,6 +74,15 @@ extension ChatListViewController: UICollectionViewDataSource, UICollectionViewDe
         }
         
         return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let chatroom = chatrooms?[indexPath.item] {
+            let chatroomVC = ChatroomViewController.create()
+            chatroomVC.chatRoom = chatroom
+            self.navigationController?.pushViewController(chatroomVC, animated: true)
+        }
+        
     }
 }
 

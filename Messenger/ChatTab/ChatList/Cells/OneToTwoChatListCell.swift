@@ -19,6 +19,9 @@ class OneToTwoChatListCell: UICollectionViewCell {
     @IBOutlet weak var lastMessageLabel: UILabel!
     @IBOutlet weak var lastTalkedTimestampLabel: UILabel!
     
+    let userStorage: UserStorage = UserStorage.shared
+    var chatroomItem: Chatroom!
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         
@@ -32,6 +35,7 @@ class OneToTwoChatListCell: UICollectionViewCell {
     }
     
     func resetUI() {
+        chatroomItem = nil
         friendProfileImageView01.image = nil
         friendProfileImageView02.image = nil
         chatRoomTitleLabel.text = ""
@@ -39,5 +43,45 @@ class OneToTwoChatListCell: UICollectionViewCell {
         lastMessageLabel.text = ""
         lastTalkedTimestampLabel.text = ""
     }
-    
+}
+
+extension OneToTwoChatListCell {
+    func bind(memberIDs: [String]) {
+        numOfPeopleLabel.text = String(memberIDs.count)
+        
+        var chatroomTitle: String! {
+            didSet {
+                DispatchQueue.main.async {
+                    self.chatRoomTitleLabel.text = chatroomTitle
+                }
+            }
+        }
+        
+        
+        for i in 1..<memberIDs.count {
+            userStorage.searchProfile(of: memberIDs[i], completion: { friend in
+                let profileImageURL = friend.profileImageURL
+                
+                switch i {
+                case 1:
+                    DispatchQueue.main.async {
+                        chatroomTitle = friend.nickname + ", "
+                        DownloadUserImage.shared.userProfileImage(filePath: profileImageURL!, completion: { image in
+                            self.friendProfileImageView01.image = image
+                        })
+                    }
+                case 2:
+                    DispatchQueue.main.async {
+                        self.chatRoomTitleLabel.text?.append(friend.nickname)
+                        DownloadUserImage.shared.userProfileImage(filePath: profileImageURL!, completion: { image in
+                            self.friendProfileImageView02.image = image
+                        })
+                    }
+                default:
+                    return
+                }
+                
+            })
+        }
+    }
 }

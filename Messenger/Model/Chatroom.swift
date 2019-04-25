@@ -26,9 +26,7 @@ struct Chatroom {
         if chatroomID != nil {
             self.chatroomID = chatroomID
         } else {
-            var iDs = ""
-            membersIDs.forEach { iDs.append($0) }
-            self.chatroomID = iDs
+            self.chatroomID = ChatroomStorage.shared.createChatroomID()
         }
         self.messagesIDs = messagesIDs
         
@@ -44,20 +42,18 @@ struct Chatroom {
         }
     }
     
-    init?(dict: [String: Any], documentID: String, messagesIDs: [String]?) {
+    init?(dict: [String: Any], documentID: String) {
         guard
             let membersIDs = dict["membersIDs"] as? [String],
-            let chatroomID = dict["chatroomID"] as? String,
             let messagesIDs = dict["messagesIDs"] as? [String] else {
                 return nil
         }
-        self.init(membersIDs: membersIDs, chatroomID: chatroomID, messagesIDs: messagesIDs)
+        self.init(membersIDs: membersIDs, chatroomID: documentID, messagesIDs: messagesIDs)
     }
     
     func toDictionary() -> [String: Any] {
         let dic: [String: Any] = [
             "membersIDs": membersIDs,
-            "chatroomID": chatroomID,
             "messagesIDs": messagesIDs
         ]
         return dic
