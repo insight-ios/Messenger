@@ -17,11 +17,11 @@ enum ChatMemberType {
 
 struct Chatroom {
     var membersIDs: [String]
-    var chatroomID: Int?
+    var chatroomID: String?
     let memberType: ChatMemberType
     var messagesIDs: [String]?
     
-    init(membersIDs: [String], chatroomID: Int?, messagesIDs: [String]?) {
+    init(membersIDs: [String], chatroomID: String?, messagesIDs: [String]?) {
         self.membersIDs = membersIDs
         if chatroomID != nil {
             self.chatroomID = chatroomID
@@ -42,26 +42,24 @@ struct Chatroom {
         }
     }
     
-    init?(dict: [String: Any], documentID: String, messagesIDs: [String]?) {
+    init?(dict: [String: Any], documentID: String) {
         guard
             let membersIDs = dict["membersIDs"] as? [String],
-            let chatroomID = dict["chatroomID"] as? Int,
             let messagesIDs = dict["messagesIDs"] as? [String] else {
                 return nil
         }
-        self.init(membersIDs: membersIDs, chatroomID: chatroomID, messagesIDs: messagesIDs)
+        self.init(membersIDs: membersIDs, chatroomID: documentID, messagesIDs: messagesIDs)
     }
     
     func toDictionary() -> [String: Any] {
         let dic: [String: Any] = [
             "membersIDs": membersIDs,
-            "chatroomID": chatroomID,
             "messagesIDs": messagesIDs
         ]
         return dic
     }
     
-    mutating func setChatroomID(id: Int) {
+    mutating func setChatroomID(id: String) {
         self.chatroomID = id
     }
 }

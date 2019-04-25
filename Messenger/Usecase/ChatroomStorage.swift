@@ -21,15 +21,15 @@ class ChatroomStorage {
         })
     }
     
-    func createChatroomID() -> Int {
+    func createChatroomID() -> String {
         print("chatroomItems.count = \(self.chatroomItems.count)")
         print("new chatroomID = \(self.chatroomItems.count + 1)")
-
-        return self.chatroomItems.count + 1
+        return String(self.chatroomItems.count + 1)
     }
     
-    func members(of chatroomID: Int) -> [String] {
-        let chatroom = chatroomItems.filter { $0.chatroomID == chatroomID }.first!
-        return chatroom.membersIDs
+    func members(of chatroomID: String, completion: @escaping ([String]) -> Void) {
+        FetchAllChatroomsUsecase.shared.membersIDs(of: chatroomID, completion: { members in
+            completion(members)
+        })
     }
 }

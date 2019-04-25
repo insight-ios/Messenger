@@ -20,9 +20,9 @@ class MessageStorage {
         })
     }
     
-    func createMessageID() -> Int {
+    func createMessageID() -> String {
         print("\n last MessageID ---> \(messageItems.count)")
         print("new Message ID Created ---> \(messageItems.count + 1)")
-        return messageItems.count + 1
+        return String(messageItems.count + 1001)
     }
 }

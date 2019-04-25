@@ -15,7 +15,7 @@ class FetchMessageUsecase {
         case queryFailedError
     }
     
-    private let collectionKey = "message"
+    private let collectionKey = "messages"
     static let shared = FetchMessageUsecase()
     
     func extractMessage(in chatroomID: Int , completion: @escaping ([Message]) -> Void ) {
@@ -32,9 +32,10 @@ class FetchMessageUsecase {
                     print(Errors.queryFailedError)
                     return
                 }
-                let messages = querySnapshot.documents.map { $0.data() }
-                    .compactMap { document -> Message? in
-                        let message = Message(dict: document)
+                
+                let messages = querySnapshot.documents.map { ($0.data(), $0.documentID) }
+                    .compactMap { document, documentID -> Message? in
+                        let message = Message(dict: document, documentID: documentID)
                         print("*******  FetchMessageUsecase : \(message) ********\n")
                         return message
                     }
