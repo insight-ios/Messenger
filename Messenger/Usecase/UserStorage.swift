@@ -25,6 +25,18 @@ class UserStorage {
         })
     }
     
+//    func searchProfile(of usersIDs: [String], completion: @escaping ([User]) -> Void) {
+//        var users: [User] = []
+//
+//        for i in 0..<usersIDs.count {
+//            searc
+//            FetchAllUsersUsecase.shared.searchUser(id: usersIDs[i], completion: { user in
+//                users.append(user)
+//            })
+//            completion(users)
+//        }
+//    }
+    
     func profileImages(path: String, completion: @escaping (UIImage) -> Void) {
         DownloadUserImage.shared.userProfileImage(filePath: path, completion: { profileImg in
             completion(profileImg)

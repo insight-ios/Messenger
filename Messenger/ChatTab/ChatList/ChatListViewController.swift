@@ -56,6 +56,8 @@ extension ChatListViewController: UICollectionViewDataSource, UICollectionViewDe
                 
             case .oneToTwo:
                 if let oneToTwoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "OneToTwoChatListCell", for: indexPath) as? OneToTwoChatListCell {
+                    oneToTwoCell.chatroomItem = chatroom
+                    oneToTwoCell.bind(memberIDs: chatroom.membersIDs)
                     return oneToTwoCell
                 }
                 

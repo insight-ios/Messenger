@@ -71,4 +71,29 @@ class FetchAllUsersUsecase {
         }
     }
     
+    func searchUsers(iDs: [String], completion: @escaping ([User]) -> Void) {
+        let database = Firestore.firestore()
+        var users: [User]!
+
+        iDs.forEach { database.collection(collectionKey).whereField("id", isEqualTo: $0)
+            .getDocuments(completion: { querySnapshot, error in
+                if let error = error {
+                    print(error)
+                    return
+                }
+
+                guard let querySnapshot = querySnapshot else {
+                    print(Errors.queryFailedError)
+                    return
+                }
+
+                querySnapshot.documents
+                    .map { ($0.data(), $0.documentID) }
+                    .compactMap { document, documentID in
+                        let user = User(dict: document, documentID: documentID)!
+                        users.append(user)
+                }
+            })
+        }
+    }
 }
