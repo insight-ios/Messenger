@@ -11,6 +11,8 @@ import UIKit
 class ChatroomViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var inputContainerView: UIView!
+    @IBOutlet weak var textField: UITextField!
     
     var chatRoom: Chatroom!
     
@@ -19,7 +21,18 @@ class ChatroomViewController: UIViewController {
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 50
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UITextField.textDidBeginEditingNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
         
+        NotificationCenter.default.removeObserver(self, name: UITextField.textDidEndEditingNotification, object: nil)
     }
     
     @IBAction func popVC(_ sender: Any) {
@@ -30,7 +43,6 @@ class ChatroomViewController: UIViewController {
         let sb = UIStoryboard(name: "ChatRoom", bundle: nil)
         return sb.instantiateViewController(withIdentifier: "ChatroomViewController") as! ChatroomViewController
     }
-    
 }
 
 extension ChatroomViewController: UITableViewDataSource, UITableViewDelegate {
@@ -66,4 +78,21 @@ extension ChatroomViewController: UITableViewDataSource, UITableViewDelegate {
         return UITableViewCell()
     }
     
+}
+
+extension ChatroomViewController {
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardFrame = (notification.userInfo?[UITextField.keyboardFrameBeginUserInfoKey] as? NSValue) else {
+            return
+        }
+        
+        let keyboardHeight: CGFloat
+        if #available(iOS 11.0, *) {
+            keyboardHeight = keyboardFrame.cgRectValue.height - self.view.safeAreaInsets.bottom
+        } else {
+            keyboardHeight = keyboardFrame.cgRectValue.height
+        }
+        print("keyboardHeight  - \(keyboardHeight)")
+        tableView.contentOffset = CGPoint(x: 0, y: -keyboardHeight)
+    }
 }

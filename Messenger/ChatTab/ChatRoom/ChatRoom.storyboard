@@ -335,39 +335,50 @@
                                     <outlet property="delegate" destination="e6f-Zp-Y3E" id="twu-o5-R1S"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QT0-8y-KrV">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lKH-Hs-vWn">
+                                        <rect key="frame" x="15" y="10" width="200" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="Mvc-8U-r5Q"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7YV-ld-sPM"/>
+                                    <constraint firstItem="lKH-Hs-vWn" firstAttribute="leading" secondItem="Osc-96-L3T" secondAttribute="leading" constant="15" id="la0-cz-6QR"/>
+                                    <constraint firstItem="lKH-Hs-vWn" firstAttribute="centerY" secondItem="Osc-96-L3T" secondAttribute="centerY" id="uP6-tR-MBt"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="Osc-96-L3T"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="QT0-8y-KrV" firstAttribute="trailing" secondItem="1ur-6K-CnT" secondAttribute="trailing" id="6oU-ow-txz"/>
+                            <constraint firstItem="1ur-6K-CnT" firstAttribute="bottom" secondItem="QT0-8y-KrV" secondAttribute="bottom" id="EFh-z4-cWe"/>
                             <constraint firstItem="SlR-nd-CCZ" firstAttribute="leading" secondItem="1ur-6K-CnT" secondAttribute="leading" id="KR1-N1-JKh"/>
                             <constraint firstItem="je8-ad-Nsd" firstAttribute="leading" secondItem="1ur-6K-CnT" secondAttribute="leading" id="OqN-Kk-HZ1"/>
                             <constraint firstItem="1ur-6K-CnT" firstAttribute="trailing" secondItem="SlR-nd-CCZ" secondAttribute="trailing" id="RgJ-j2-LrT"/>
                             <constraint firstItem="je8-ad-Nsd" firstAttribute="top" secondItem="1ur-6K-CnT" secondAttribute="top" id="TDT-4C-Na2"/>
+                            <constraint firstItem="QT0-8y-KrV" firstAttribute="leading" secondItem="1ur-6K-CnT" secondAttribute="leading" id="Xgm-xy-zkT"/>
                             <constraint firstItem="SlR-nd-CCZ" firstAttribute="top" secondItem="je8-ad-Nsd" secondAttribute="bottom" id="l39-ix-Phu"/>
-                            <constraint firstItem="1ur-6K-CnT" firstAttribute="bottom" secondItem="SlR-nd-CCZ" secondAttribute="bottom" id="mgd-99-ALF"/>
                             <constraint firstAttribute="trailing" secondItem="je8-ad-Nsd" secondAttribute="trailing" id="r9E-JQ-Lae"/>
+                            <constraint firstItem="1ur-6K-CnT" firstAttribute="bottom" secondItem="SlR-nd-CCZ" secondAttribute="bottom" id="zXx-rD-Xqd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1ur-6K-CnT"/>
                     </view>
                     <connections>
+                        <outlet property="inputContainerView" destination="QT0-8y-KrV" id="QKX-If-TYA"/>
                         <outlet property="tableView" destination="SlR-nd-CCZ" id="SVK-P0-B7v"/>
+                        <outlet property="textField" destination="lKH-Hs-vWn" id="iDX-pd-cW8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vwh-FQ-ScL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="QT0-8y-KrV">
-                    <rect key="frame" x="0.0" y="0.0" width="407" height="59"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lKH-Hs-vWn">
-                            <rect key="frame" x="33" y="14" width="97" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <viewLayoutGuide key="safeArea" id="Osc-96-L3T"/>
-                </view>
             </objects>
             <point key="canvasLocation" x="-175.36231884057972" y="113.83928571428571"/>
         </scene>
