@@ -66,28 +66,37 @@ class FetchAllUsersUsecase {
     }
     
     func searchUsers(iDs: [String], completion: @escaping ([User]) -> Void) {
+        let dispatchGroup = DispatchGroup()
         let database = Firestore.firestore()
-        var users: [User]!
+        var result: [User] = []
+        iDs.forEach {
+            let eachID = $0
+            if $0 == UserStorage.myID {
+                return
+            }
+            
+            dispatchGroup.enter()
+            database.collection(collectionKey).document($0)
+                .getDocument(completion: { querySnapshot, error in
+                    defer { dispatchGroup.leave() }
+                    
+                    if let error = error {
+                        print(error)
+                        return
+                    }
 
-        iDs.forEach { database.collection(collectionKey).whereField("id", isEqualTo: $0)
-            .getDocuments(completion: { querySnapshot, error in
-                if let error = error {
-                    print(error)
-                    return
-                }
-
-                guard let querySnapshot = querySnapshot else {
-                    print(Errors.queryFailedError)
-                    return
-                }
-
-                querySnapshot.documents
-                    .map { ($0.data(), $0.documentID) }
-                    .compactMap { document, documentID in
-                        let user = User(dict: document, documentID: documentID)!
-                        users.append(user)
-                }
-            })
+                    guard let querySnapshot = querySnapshot, let dict = querySnapshot.data() else {
+                        print(Errors.queryFailedError)
+                        return
+                    }
+                    
+                    if let user = User(dict: dict, documentID: eachID) {
+                        result.append(user)
+                    }
+                })
+        }
+        dispatchGroup.notify(queue: .main) {
+            completion(result)
         }
     }
 }

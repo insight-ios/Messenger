@@ -57,31 +57,22 @@ extension OneToTwoChatListCell {
             }
         }
         
-        
-        for i in 1..<memberIDs.count {
-            userStorage.searchProfile(of: memberIDs[i], completion: { friend in
-                let profileImageURL = friend.profileImageURL
+        userStorage.searchProfiles(of: memberIDs, completion: { friends in
+            for i in 0 ..< friends.count {
+                let profileImageURL = friends[i].profileImageURL
                 
-                switch i {
-                case 1:
-                    DispatchQueue.main.async {
-                        chatroomTitle = friend.nickname + ", "
-                        DownloadUserImage.shared.userProfileImage(filePath: profileImageURL!, completion: { image in
+                DispatchQueue.main.async {
+                    DownloadUserImage.shared.userProfileImage(filePath: profileImageURL!, completion: { image in
+                        if self.friendProfileImageView01.image == nil {
                             self.friendProfileImageView01.image = image
-                        })
-                    }
-                case 2:
-                    DispatchQueue.main.async {
-                        self.chatRoomTitleLabel.text?.append(friend.nickname)
-                        DownloadUserImage.shared.userProfileImage(filePath: profileImageURL!, completion: { image in
+                            chatroomTitle = friends[i].nickname + ", "
+                        } else {
+                            chatroomTitle.append(friends[i].nickname)
                             self.friendProfileImageView02.image = image
-                        })
-                    }
-                default:
-                    return
+                        }
+                    })
                 }
-                
-            })
-        }
+            }
+        })
     }
 }

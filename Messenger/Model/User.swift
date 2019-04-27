@@ -32,6 +32,7 @@ struct User {
     init?(dict: [String: Any], documentID: String) {
         guard
             let nickname = dict["nickname"] as? String else {
+                print("user return nil")
                 return nil
         }
         

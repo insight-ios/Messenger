@@ -18,7 +18,18 @@ enum ChatMemberType {
 struct Chatroom {
     var membersIDs: [String]
     var chatroomID: String?
-    let memberType: ChatMemberType
+    var memberType: ChatMemberType {
+        switch membersIDs.count - 1 {
+        case 1:
+            return .oneToOne
+        case 2:
+            return .oneToTwo
+        case 3:
+            return .oneToThree
+        default :
+            return .oneToMulti
+        }
+    }
     var messagesIDs: [String]?
     
     init(membersIDs: [String], chatroomID: String?, messagesIDs: [String]?) {
@@ -29,17 +40,6 @@ struct Chatroom {
             self.chatroomID = ChatroomStorage.shared.createChatroomID()
         }
         self.messagesIDs = messagesIDs
-        
-        switch membersIDs.count - 1 {
-        case 1:
-            self.memberType = .oneToOne
-        case 2:
-            self.memberType = .oneToTwo
-        case 3:
-            self.memberType = .oneToThree
-        default :
-            self.memberType = .oneToMulti
-        }
     }
     
     init?(dict: [String: Any], documentID: String) {

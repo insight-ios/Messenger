@@ -12,6 +12,7 @@ import UIKit
 class UserStorage {
     
     static let shared = UserStorage()
+    static let myID = "0000"
     
     func allUsers(completion: @escaping ([User]) -> Void) {
         FetchAllUsersUsecase.shared.execute(completion: { users in
@@ -25,17 +26,11 @@ class UserStorage {
         })
     }
     
-//    func searchProfile(of usersIDs: [String], completion: @escaping ([User]) -> Void) {
-//        var users: [User] = []
-//
-//        for i in 0..<usersIDs.count {
-//            searc
-//            FetchAllUsersUsecase.shared.searchUser(id: usersIDs[i], completion: { user in
-//                users.append(user)
-//            })
-//            completion(users)
-//        }
-//    }
+    func searchProfiles(of usersIDs: [String], completion: @escaping ([User]) -> Void) {
+        FetchAllUsersUsecase.shared.searchUsers(iDs: usersIDs, completion: { users in
+            completion(users)
+        })
+    }
     
     func profileImages(path: String, completion: @escaping (UIImage) -> Void) {
         DownloadUserImage.shared.userProfileImage(filePath: path, completion: { profileImg in
