@@ -43,9 +43,11 @@ extension OneToOneChatListCell {
         userStorage.searchProfile(of: memberID, completion: { user in
             self.friendNicknameLabel.text = user.nickname
             
-            DownloadUserImage.shared.userProfileImage(filePath: user.profileImageURL!, completion: { image in
-                self.friendProfileImageView.image = image
-            })
+            if let url = user.profileImageURL {
+                DownloadUserImage.shared.userProfileImage(filePath: url, completion: { image in
+                    self.friendProfileImageView.image = image
+                })
+            }
         })
     }
 }

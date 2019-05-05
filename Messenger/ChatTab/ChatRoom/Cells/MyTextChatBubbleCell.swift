@@ -24,15 +24,13 @@ class MyTextChatBubbleCell: UITableViewCell {
         timeStampLabel.text = ""
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        chatBubbleView.layer.cornerRadius = 8
+    }
+    
     func setMessage() {
         contentsLabel.text = contents
         timeStampLabel.text = timeStamp
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        chatBubbleView.layer.cornerRadius = 8
-        contentsLabel.text = "얄루얄루얄라셩얄라리얄라....edkjfkjkkddkskdjlsjldkjfakjdlfsk djfksjdksjfks skjdkflj()dfkjslkd"
-    }
-
 }

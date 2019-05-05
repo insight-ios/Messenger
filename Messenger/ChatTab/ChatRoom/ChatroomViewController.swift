@@ -33,6 +33,10 @@ class ChatroomViewController: UIViewController {
         tableView.estimatedRowHeight = 50
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     @IBAction func popVC(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -79,6 +83,7 @@ extension ChatroomViewController: UITableViewDataSource, UITableViewDelegate {
                 // 1. 메세지가 텍스트라면
                 if eachMessage.contents != nil {
                     let friendTextBubbleCell = tableView.dequeueReusableCell(withIdentifier: "FriendTextChatBubbleCell", for: indexPath) as! FriendTextChatBubbleCell
+                    friendTextBubbleCell.message = eachMessage
                     return friendTextBubbleCell
                 }
     

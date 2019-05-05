@@ -21,7 +21,6 @@
 		3731BDB4226EC6C90097DF13 /* ChatroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3731BDB3226EC6C90097DF13 /* ChatroomViewController.swift */; };
 		3731BDB6226EC8140097DF13 /* MyTextChatBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3731BDB5226EC8140097DF13 /* MyTextChatBubbleCell.swift */; };
 		3731BDB8226EC84A0097DF13 /* MyImageChatBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3731BDB7226EC84A0097DF13 /* MyImageChatBubbleCell.swift */; };
-		3731BDBA226EC8670097DF13 /* StartChatTimestampCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3731BDB9226EC8670097DF13 /* StartChatTimestampCell.swift */; };
 		3731BDBC226EC8AF0097DF13 /* FriendTextChatBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3731BDBB226EC8AF0097DF13 /* FriendTextChatBubbleCell.swift */; };
 		3731BDBE226EC8F20097DF13 /* FriendImageChatBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3731BDBD226EC8F20097DF13 /* FriendImageChatBubbleCell.swift */; };
 		37450706226960E2002DF077 /* OneToOneChatListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37450705226960E2002DF077 /* OneToOneChatListCell.swift */; };
@@ -56,7 +55,6 @@
 		3731BDB3226EC6C90097DF13 /* ChatroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomViewController.swift; sourceTree = "<group>"; };
 		3731BDB5226EC8140097DF13 /* MyTextChatBubbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextChatBubbleCell.swift; sourceTree = "<group>"; };
 		3731BDB7226EC84A0097DF13 /* MyImageChatBubbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImageChatBubbleCell.swift; sourceTree = "<group>"; };
-		3731BDB9226EC8670097DF13 /* StartChatTimestampCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartChatTimestampCell.swift; sourceTree = "<group>"; };
 		3731BDBB226EC8AF0097DF13 /* FriendTextChatBubbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTextChatBubbleCell.swift; sourceTree = "<group>"; };
 		3731BDBD226EC8F20097DF13 /* FriendImageChatBubbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendImageChatBubbleCell.swift; sourceTree = "<group>"; };
 		37450705226960E2002DF077 /* OneToOneChatListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneToOneChatListCell.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 			children = (
 				3731BDB5226EC8140097DF13 /* MyTextChatBubbleCell.swift */,
 				3731BDB7226EC84A0097DF13 /* MyImageChatBubbleCell.swift */,
-				3731BDB9226EC8670097DF13 /* StartChatTimestampCell.swift */,
 				3731BDBB226EC8AF0097DF13 /* FriendTextChatBubbleCell.swift */,
 				3731BDBD226EC8F20097DF13 /* FriendImageChatBubbleCell.swift */,
 				371FCF5F227019400034DA9D /* TimestampTableViewCell.swift */,
@@ -434,7 +431,6 @@
 				3745070F22699410002DF077 /* Chatroom.swift in Sources */,
 				37450706226960E2002DF077 /* OneToOneChatListCell.swift in Sources */,
 				371FCF60227019400034DA9D /* TimestampTableViewCell.swift in Sources */,
-				3731BDBA226EC8670097DF13 /* StartChatTimestampCell.swift in Sources */,
 				3731BDB8226EC84A0097DF13 /* MyImageChatBubbleCell.swift in Sources */,
 				374507132269BB15002DF077 /* FetchAllChatroomsUsecase.swift in Sources */,
 				3731BDBC226EC8AF0097DF13 /* FriendTextChatBubbleCell.swift in Sources */,
