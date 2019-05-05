@@ -18,7 +18,7 @@ class FetchMessageUsecase {
     private let collectionKey = "messages"
     static let shared = FetchMessageUsecase()
     
-    func extractMessage(in chatroomID: Int , completion: @escaping ([Message]) -> Void ) {
+    func extractMessage(in chatroomID: String , completion: @escaping ([Message]) -> Void ) {
         let database = Firestore.firestore()
         database.collection(collectionKey)
             .whereField("chatroomID", isEqualTo: chatroomID)
@@ -36,7 +36,6 @@ class FetchMessageUsecase {
                 let messages = querySnapshot.documents.map { ($0.data(), $0.documentID) }
                     .compactMap { document, documentID -> Message? in
                         let message = Message(dict: document, documentID: documentID)
-                        print("*******  FetchMessageUsecase : \(message) ********\n")
                         return message
                     }
                 completion(messages)

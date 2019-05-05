@@ -14,11 +14,19 @@ class MyTextChatBubbleCell: UITableViewCell {
     @IBOutlet weak var contentsLabel: UILabel!
     @IBOutlet weak var timeStampLabel: UILabel!
     
+    var contents: String!
+    var timeStamp: String!
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         
         contentsLabel.text = ""
         timeStampLabel.text = ""
+    }
+    
+    func setMessage() {
+        contentsLabel.text = contents
+        timeStampLabel.text = timeStamp
     }
     
     override func awakeFromNib() {

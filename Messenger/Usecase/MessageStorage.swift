@@ -13,7 +13,7 @@ class MessageStorage {
     static let shared = MessageStorage()
     var messageItems: [Message]!
     
-    func allMessages(chatroomID: Int, completion: @escaping ([Message]) -> Void) {
+    func allMessages(chatroomID: String, completion: @escaping ([Message]) -> Void) {
         FetchMessageUsecase.shared.extractMessage(in: chatroomID, completion: { messages in
             self.messageItems = messages
             completion(messages)

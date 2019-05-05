@@ -18,10 +18,10 @@ struct Message {
     let contents: String?
     let images: [String]?
     var numOfUnRead: Int
-    let timestamp: String
+    var timestamp: Double
     
     
-    init(messageID: String, chatroomID: String, fromUserID: String, contents: String?, images: [String]?, numOfUnRead: Int, timestamp: String) {
+    init(messageID: String, chatroomID: String, fromUserID: String, contents: String?, images: [String]?, numOfUnRead: Int, timestamp: Double) {
         self.messageID = messageID
         self.chatroomID = chatroomID
         self.fromUserID = fromUserID
@@ -41,7 +41,8 @@ struct Message {
         let moment = Date()
         let formatter = DateFormatter()
         print("New Message --- time: \(formatter.string(from: moment))")
-        self.timestamp = formatter.string(from: moment)
+        let timeInterval = moment.timeIntervalSince1970
+        self.timestamp = Double(timeInterval)
        
         /* Sutie - 안읽음 개수 처리를 어떻게 핸들링할지 고민..  */
         self.numOfUnRead = 0
@@ -53,7 +54,7 @@ struct Message {
             let chatroomID = dict["chatroomID"] as? String,
             let fromUserID = dict["fromUserID"] as? String,
             let numOfUnRead = dict["numOfUnRead"] as? Int,
-            let timestamp = dict["timestamp"] as? String else {
+            let timestamp = dict["timestamp"] as? Double else {
                 return nil
         }
         
